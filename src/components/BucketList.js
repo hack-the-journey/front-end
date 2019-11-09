@@ -5,7 +5,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Button from "@material-ui/core/Button";
-import bucketlist from "../services/bucketlist";
+import AddBucketListItem from "./AddBucketListItem";
 
 function BucketList() {
   const [bucketList, setBucketList] = useState([]);
@@ -27,6 +27,7 @@ function BucketList() {
   return (
     <div className="App">
       <h1>BucketList</h1>
+      <AddBucketListItem></AddBucketListItem>
       <List component="nav" aria-label="main mailbox folders">
         {bucketList.map(item => (
           <ListItem key={item.id} button>
