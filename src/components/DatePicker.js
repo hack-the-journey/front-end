@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import userProfileService from "../services/userprofile";
 
 const useStyles = makeStyles(theme => ({
     container: {
@@ -15,27 +16,33 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-function DatePicker() {
+function DatePicker({changeDate}) {
     const classes = useStyles();
 
     const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
 
-    const handleDateChange = date => {
+    useEffect(() => {
+        changeDate(selectedDate);
+    }, []);
+
+    const handleDateChange = evt => {
+        let date = evt.target.value;
         setSelectedDate(date);
+        changeDate(date);
     };
+
     return (
-        <form className={classes.container} noValidate>
-            <TextField
-                id="date"
-                label="date"
-                type="date"
-                defaultValue="2017-05-24"
-                className={classes.textField}
-                InputLabelProps={{
-                    shrink: true,
-                }}
-            />
-        </form>
+        <TextField
+            onChange={handleDateChange}
+            id="date"
+            label="date"
+            type="date"
+            defaultValue="2017-05-24"
+            className={classes.textField}
+            InputLabelProps={{
+                shrink: true,
+            }}
+        />
     );
 }
 

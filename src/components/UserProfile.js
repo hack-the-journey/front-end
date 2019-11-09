@@ -34,16 +34,24 @@ function UserProfile() {
         };
 
         userProfileService.createDateRange(item).then(returnedDateRange => {
-            setDateRanges([...datesRanges, returnedDateRange]);
+            setDateRanges([...datesRanges, item]);
         })
+    };
+
+    const changeDateFrom = (date) =>{
+        setDateFrom(date);
+    };
+
+    const changeDateTo = (date) =>{
+        setDateTo(date);
     };
 
     return (
         <div>
             <h1>User profile</h1>
             <p>Location: London</p>
-            <DatePicker />
-            <DatePicker/>
+            <DatePicker changeDate={changeDateFrom}/>
+            <DatePicker changeDate={changeDateTo}/>
             <Button
                 variant="contained"
                 color="primary"
@@ -53,11 +61,7 @@ function UserProfile() {
                 Add
             </Button>
 
-            {datesRanges.map(range =>
-                <div className={classes.dateRange}>
-                    <p>{range.from} : {range.to}</p>
-                </div>
-            )}
+            {datesRanges.map(range => <p>{range.from} : {range.to}</p>)}
 
         </div>
 
