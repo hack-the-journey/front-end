@@ -1,0 +1,12 @@
+{
+  "bucketList": [
+    {
+      "destination": "Norway",
+      "id": 1
+    },
+    {
+      "destination": "France",
+      "id": 2
+    }
+  ]
+}
