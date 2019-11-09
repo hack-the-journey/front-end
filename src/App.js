@@ -1,16 +1,13 @@
 import React from 'react';
 import BucketList from './components/BucketList'
-import Button from '@material-ui/core/Button';
-
+import Calender from './components/UserProfile'
 
 
 function App() {
   return (
     <div className="App">
-      <BucketList></BucketList>
-      {/*<Button variant="contained" color="primary">*/}
-        {/*Hello World*/}
-    {/*</Button>*/}
+      {/*<BucketList></BucketList>*/}
+      <Calender/>
     </div>
   );
 }

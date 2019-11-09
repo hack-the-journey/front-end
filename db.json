@@ -5,8 +5,13 @@
       "id": 1
     },
     {
-      "destination": "France",
-      "id": 2
+      "destination": "test",
+      "id": "test1573320388753"
     }
-  ]
+  ],
+  "userProfile": {
+    "from": {},
+    "to": {},
+    "id": "dateRange1573331003868"
+  }
 }

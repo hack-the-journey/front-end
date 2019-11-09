@@ -10,6 +10,21 @@ import AddBucketListItem from "./AddBucketListItem";
 function BucketList() {
   const [bucketList, setBucketList] = useState([]);
 
+
+  const handleNewItem = (newItem) => {
+      const item = {
+          "destination": newItem,
+          "id": newItem + Date.now()
+      };
+
+      bucketListService.create(item).then(returnedItem => {
+          setBucketList([...bucketList, returnedItem]);
+      })
+
+
+
+    };
+
   useEffect(() => {
     bucketListService
       .getAll()
@@ -27,7 +42,7 @@ function BucketList() {
   return (
     <div className="App">
       <h1>BucketList</h1>
-      <AddBucketListItem></AddBucketListItem>
+      <AddBucketListItem addNew={handleNewItem}/>
       <List component="nav" aria-label="main mailbox folders">
         {bucketList.map(item => (
           <ListItem key={item.id} button>
