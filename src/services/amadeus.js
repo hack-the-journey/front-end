@@ -2,7 +2,7 @@ import axios from "axios";
 
 let baseUrl = "http://localhost:3001/bucketlist/";
 
-const getAll = () => {
+const getToken = () => {
     return axios.get(baseUrl).then(response => response.data);
 };
 

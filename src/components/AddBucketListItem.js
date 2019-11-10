@@ -30,14 +30,16 @@ function AddBuckListItem({addNew}) {
   return (
     <>
         <div className={classes.root} >
-          <TextField
-            id="newBucketListItem"
-            label="Add New"
-            type="search"
-            margin="normal"
-            variant="outlined"
-            onChange={handleChange}
-          >{newItem}</TextField>
+            <TextField
+                label="I wan't to go to.."
+                type="Search field"
+                className={classes.textField}
+                InputLabelProps={{
+                    shrink: true,
+                }}
+                margin="normal"
+                value={newItem}
+            />
             <Button
                 onClick={() => handleAdd()}
                 variant="contained"

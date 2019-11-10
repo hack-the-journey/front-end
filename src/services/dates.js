@@ -1,6 +1,6 @@
 import axios from "axios";
 
-let baseUrl = "http://localhost:3001/userprofile/";
+let baseUrl = "http://localhost:3001/dates/";
 
 const getAll = () => {
     return axios.get(baseUrl).then(response => response.data);
