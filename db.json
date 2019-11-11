@@ -1,12 +1,20 @@
 {
   "bucketList": [
     {
-      "destination": "Norway",
-      "id": 1
+      "destination": "Slovenia",
+      "id": "Slovenia1573353784599"
     },
     {
-      "destination": "test",
-      "id": "test1573320388753"
+      "destination": "mexico",
+      "id": "mexico1573386170116"
+    },
+    {
+      "destination": "goa",
+      "id": "goa1573387428329"
+    },
+    {
+      "destination": "venice",
+      "id": "venice1573387523554"
     }
   ],
   "dates": [

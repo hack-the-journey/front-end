@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import UserProfile from './UserProfile';
 import BucketList from './BucketList';
+import Ideas from './Ideas';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -42,7 +43,7 @@ const useStyles = makeStyles(theme => ({
 export default function FullWidthTabs() {
   const classes = useStyles();
   const theme = useTheme();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(1);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -80,7 +81,7 @@ export default function FullWidthTabs() {
           <BucketList></BucketList>
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
-          Item Three
+          <Ideas/>
         </TabPanel>
       </SwipeableViews>
     </div>

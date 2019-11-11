@@ -11,7 +11,7 @@ const useStyles = makeStyles({
     },
     addButton: {
         margin: "0.8rem"
-    }
+    },
 
 });
 
@@ -24,8 +24,9 @@ function AddBuckListItem({addNew}) {
     };
 
     const handleAdd = (evt) => {
-        addNew(newItem);
         console.log("tset");
+        addNew(newItem);
+
     };
   return (
     <>
@@ -38,6 +39,7 @@ function AddBuckListItem({addNew}) {
                     shrink: true,
                 }}
                 margin="normal"
+                onChange={handleChange}
                 value={newItem}
             />
             <Button
